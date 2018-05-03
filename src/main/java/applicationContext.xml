@@ -4,8 +4,25 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id ="MyCoach" 
-	    class="com.itktechnologies.springdemo.BaseballCoach">
+    <bean id="myFortune"
+        class="com.itktechnologies.springdemo.HappyFortuneService">
+    </bean>
+    
+    
+	<bean id ="myCoach" 
+	    class="com.itktechnologies.springdemo.TrackCoach">
+	    
+	    <constructor-arg ref="myFortune"/>  
 	</bean>
+	
+	
+	
+	<bean id ="myCricketCoach" 
+	    class="com.itktechnologies.springdemo.CricketCoach">
+	    
+	    <property name="fortuneService" ref="myFortune"/>
+	</bean>
+	
 
 </beans>
+
