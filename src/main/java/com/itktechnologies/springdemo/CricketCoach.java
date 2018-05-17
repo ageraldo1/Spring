@@ -1,6 +1,9 @@
 package com.itktechnologies.springdemo;
 
 public class CricketCoach implements Coach {
+	
+	private String emailAddress;
+	private String team;
 
 	private FortuneService fortuneService;
 	
@@ -25,6 +28,23 @@ public class CricketCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		System.out.println("At CricketCoach setEmailAddress method");
+		this.emailAddress = emailAddress;
+	}	
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		System.out.println("At CricketCoach setTeam method");
+		this.team = team;
+	}
 
 
 }

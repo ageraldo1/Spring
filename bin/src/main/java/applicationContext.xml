@@ -2,13 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<context:property-placeholder location="classpath:sport.properties"/>
-	
     <bean id="myFortune"
         class="com.itktechnologies.springdemo.HappyFortuneService">
     </bean>
@@ -26,16 +21,6 @@
 	    class="com.itktechnologies.springdemo.CricketCoach">
 	    
 	    <property name="fortuneService" ref="myFortune"/>
-	    
-	    <!-- 
-	    <property name="emailAddress" value="cricketcoach@espn.com" />
-	    <property name="team" value="TheTeam" />
-	     -->
-	     
-	     <property name="emailAddress" value="${foo.email}" />
-	     <property name="team" value="${foo.team}" />
-	     
-	    	    
 	</bean>
 	
 
